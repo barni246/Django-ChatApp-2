@@ -1,3 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .mdl-textfield__input {
+        padding: 10px 90px;
+    }
+</style>
+
 <h1>Login</h1>
 
 {% if wrongPassword %}
@@ -8,8 +17,32 @@
 
 <form method="POST" action="/login/">
     {% csrf_token %}
-    <div><input name="username" type="text"></div>
-    <div><input name="password" type="password"></div>
-    <div><button>Login</button></div>
+    <input type="hidden" name="redirect" value="{{ redirect }}">
+
+
+<div class="input-container" style="display: flex; flex-direction: column;">
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input"  name="username" type="text" id="sample3" >
+        <label class="mdl-textfield__label"  for="sample3">Username...</label>
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" name="password" type="password" id="sample33"  autocomplete="new-password">
+        <label class="mdl-textfield__label" for="sample33">password...</label>
+    </div>
+
+    <!-- Accent-colored raised button with ripple -->
+    </div> <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Login
+    </button>
+    <div>
+
+</div>
+   
+
+
 
 </form>
+
+{% endblock %}
