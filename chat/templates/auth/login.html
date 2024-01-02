@@ -15,7 +15,7 @@
 
 {% endif %}
 
-<form method="POST" action="/login/">
+<form method="POST" action="/login/" autocomplete="off">
     {% csrf_token %}
     <input type="hidden" name="redirect" value="{{ redirect }}">
 
@@ -23,13 +23,13 @@
 <div class="input-container" style="display: flex; flex-direction: column;">
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input"  name="username" type="text" id="sample3" >
-        <label class="mdl-textfield__label"  for="sample3">Username...</label>
+        <input class="mdl-textfield__input"  name="username" type="text" id="sample13" >
+        <label class="mdl-textfield__label"  for="sample13">Username...</label>
     </div>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" name="password" type="password" id="sample33"  autocomplete="new-password">
-        <label class="mdl-textfield__label" for="sample33">password...</label>
+        <input class="mdl-textfield__input" name="password" type="password" id="sample133"  autocomplete="new-password">
+        <label class="mdl-textfield__label" for="sample133">password...</label>
     </div>
 
     <!-- Accent-colored raised button with ripple -->
@@ -39,7 +39,8 @@
     <div>
 
 </div>
-   
+ 
+<div class="register-container"><a href="/register/">Sign up</a></div>
 
 
 
